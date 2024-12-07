@@ -22,7 +22,7 @@ const Features = () => {
         <div className="flex flex-col items-center">
           <div className="">
             <Image
-              src="/services.png" // Image path
+              src="/Services.png" // Image path
               alt="24/7 Customer Service"
               width={64} // Maintain width (same as class "w-16")
               height={72} // Maintain height (same as class "h-18")

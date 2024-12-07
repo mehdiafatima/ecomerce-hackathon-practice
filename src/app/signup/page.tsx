@@ -34,7 +34,7 @@ const Signup = () => {
             <div className="flex justify-center my-4">
               <button className="flex items-center justify-center bg-white border border-gray-300 text-gray-700 py-2 px-4 rounded-md w-full hover:bg-gray-50 transition duration-200">
                 <Image
-                  src="/icon-Google.png" // Replace with your Google icon image path
+                  src="/Icon-Google.png" // Replace with your Google icon image path
                   alt="Google"
                   width={20} // Adjust width for your Google icon
                   height={20} // Adjust height for your Google icon
