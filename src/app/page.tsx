@@ -7,8 +7,6 @@ import ImageComponent from './components/ImageComponent';
 import OurProduct from './components/OurProducts';
 import NewArrival from './components/NewArrival';
 import Features from './components/Features';
-import Footer from './components/Footer';
-
 
 
 const Home = () => {
