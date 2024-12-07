@@ -1,6 +1,6 @@
 // pages/about.tsx
 import React from "react";
-import Image from "next/image";
+import Image from "next/image"; // Using Next.js Image component for optimization
 import { FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const AboutPage = () => {
@@ -51,29 +51,37 @@ const AboutPage = () => {
           </p>
         </div>
         <div className="md:w-1/2 mt-8 md:mt-0 md:ml-8">
-          <img src="/sideimage.png" alt="Our Story Image" className=" w-full h-auto" />
+          <Image 
+            src="/sideimage.png" 
+            alt="Our Story Image" 
+            width={500} // Set width for optimal scaling
+            height={500} // Set height for optimal scaling
+            className="w-full h-auto"
+          />
         </div>
       </div>
 
       <div className="mt-20 flex justify-center">
-        <img src="/Frame 891.png" alt="Additional Image" className=" w-full h-auto max-w-screen-md" />
+        <Image 
+          src="/Frame 891.png" 
+          alt="Additional Image" 
+          width={800} // Set width for optimal display
+          height={400} // Set height for optimal display
+          className="w-full h-auto max-w-screen-md" 
+        />
       </div>
 
-  
-      <div className="py-16  mt-16 w-full">
+      <div className="py-16 mt-16 w-full">
         <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20">
-       
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:ml-20">
             {teamMembers.map((member, index) => (
-              <div
-                key={index}
-                className="text-start "
-              >
+              <div key={index} className="text-start">
                 <div className="relative w-full h-64">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    fill
+                  <Image 
+                    src={member.image} 
+                    alt={member.name} 
+                    width={200} 
+                    height={200} 
                     className="object-cover"
                   />
                 </div>
@@ -86,18 +94,21 @@ const AboutPage = () => {
                     <a
                       href={member.socials.twitter}
                       className="text-gray-500 hover:text-blue-500"
+                      aria-label={`Follow ${member.name} on Twitter`}
                     >
                       <FaTwitter size={20} />
                     </a>
                     <a
                       href={member.socials.instagram}
                       className="text-gray-500 hover:text-pink-500"
+                      aria-label={`Follow ${member.name} on Instagram`}
                     >
                       <FaInstagram size={20} />
                     </a>
                     <a
                       href={member.socials.linkedin}
                       className="text-gray-500 hover:text-blue-700"
+                      aria-label={`Follow ${member.name} on LinkedIn`}
                     >
                       <FaLinkedin size={20} />
                     </a>
@@ -111,34 +122,49 @@ const AboutPage = () => {
             {teamMembers.map((_, index) => (
               <div
                 key={index}
-                className={`h-2 w-2 rounded-full ${
-                  index === 0 ? "bg-gray-800" : "bg-gray-400"
-                }`}
+                className={`h-2 w-2 rounded-full ${index === 0 ? "bg-gray-800" : "bg-gray-400"}`}
               ></div>
             ))}
           </div>
         </div>
       </div>
 
-
       <div className="grid grid-cols-1 md:grid-cols-3 gap-[55px] text-center lg:ml-20 mt-20">
         <div className="flex flex-col items-center">
           <div className="">
-            <img src="/Services1.png" alt="Free and Fast Delivery" className="h-18 w-16 mb-4"/>
+            <Image 
+              src="/Services1.png" 
+              alt="Free and Fast Delivery" 
+              width={64} 
+              height={72} 
+              className="mb-4"
+            />
           </div>
           <h3 className="text-lg font-bold">FREE AND FAST DELIVERY</h3>
           <p>Free delivery for all orders over $140</p>
         </div>
         <div className="flex flex-col items-center">
           <div className="">
-            <img src="/services.png" alt="24/7 Customer Service" className="h-18 w-16 mb-4"/>
+            <Image 
+              src="/services.png" 
+              alt="24/7 Customer Service" 
+              width={64} 
+              height={72} 
+              className="mb-4"
+            />
           </div>
           <h3 className="text-lg font-bold">24/7 CUSTOMER SERVICE</h3>
           <p>Friendly 24/7 customer support</p>
         </div>
         <div className="flex flex-col items-center">
           <div className="">
-            <img src="/gurantee.png" alt="Money Back Guarantee" className="h-18 w-16 mb-4"/>
+            <Image 
+              src="/gurantee.png" 
+              alt="Money Back Guarantee" 
+              width={64} 
+              height={72} 
+              className="mb-4"
+            />
           </div>
           <h3 className="text-lg font-bold">MONEY BACK GUARANTEE</h3>
           <p>We return money within 30 days</p>

@@ -1,5 +1,6 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from "react";
+import Image from "next/image"; // Importing Image component from next/image
 
 const FlashSales = () => {
   const productImages = [
@@ -54,29 +55,41 @@ const FlashSales = () => {
       <div className="max-w-7xl mx-auto px-4">
         {/* Header Section */}
         <div className="flex items-center space-x-2">
-  <span className="w-2 h-5 bg-red-600 rounded"></span>
-  <h3 className="text-red-600 font-semibold lg:text-2xl">Today&apos;s</h3>
-</div>
+          <span className="w-2 h-5 bg-red-600 rounded"></span>
+          <h3 className="text-red-600 font-semibold lg:text-2xl">
+            Today&apos;s
+          </h3>
+        </div>
         <div className="flex items-center gap-8 mb-3">
-          <h2 className="text-xl font-bold lg:text-3xl text-black lg:ml-19">Flash Sales</h2>
+          <h2 className="text-xl font-bold lg:text-3xl text-black lg:ml-19">
+            Flash Sales
+          </h2>
           <div className="flex items-center gap-2 text-sm">
             <div className="flex flex-col items-center">
-              <span className="text-lg font-semibold lg:text-2xl">{timeLeft.days}</span>
+              <span className="text-lg font-semibold lg:text-2xl">
+                {timeLeft.days}
+              </span>
               <span>Days</span>
             </div>
             <span>:</span>
             <div className="flex flex-col items-center">
-              <span className="text-lg font-semibold lg:text-2xl">{timeLeft.hours}</span>
+              <span className="text-lg font-semibold lg:text-2xl">
+                {timeLeft.hours}
+              </span>
               <span>Hours</span>
             </div>
             <span>:</span>
             <div className="flex flex-col items-center">
-              <span className="text-lg font-semibold lg:text-2xl">{timeLeft.minutes}</span>
+              <span className="text-lg font-semibold lg:text-2xl">
+                {timeLeft.minutes}
+              </span>
               <span>Minutes</span>
             </div>
             <span>:</span>
             <div className="flex flex-col items-center">
-              <span className="text-lg font-semibold lg:text-2xl">{timeLeft.seconds}</span>
+              <span className="text-lg font-semibold lg:text-2xl">
+                {timeLeft.seconds}
+              </span>
               <span>Seconds</span>
             </div>
           </div>
@@ -90,10 +103,13 @@ const FlashSales = () => {
               key={index}
               className="w-full sm:w-1/2 md:w-1/4 lg:w-1/5 p-2 rounded-lg shadow-md hover:shadow-lg transition"
             >
-              <img
+              <Image
                 src={image}
                 alt={`Product ${index + 1}`}
-                className="w-full h-auto object-contain rounded-lg"
+                width={300} // Replace with your actual width
+                height={300} // Replace with your actual height
+                className="rounded-lg"
+                layout="responsive" // Makes the image responsive
               />
             </div>
           ))}

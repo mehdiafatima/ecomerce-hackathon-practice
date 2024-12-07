@@ -1,12 +1,15 @@
 import React from "react";
+import Image from "next/image"; // Import Image from Next.js
 
 const ImageComponent = () => {
   return (
     <div className="py-8">
-      <img
-        src="/Frame 600.png" // Replace with your image path
+      <Image
+        src="/Frame 600.png" // Path to your image
         alt="Descriptive Alt Text"
-        className="w-full h-90 object-cover lg:ml-10" // Adjust the height as needed
+        width={1200} // Set the appropriate width
+        height={600} // Set the appropriate height
+        className="w-full h-auto object-cover lg:ml-10" // Make sure the aspect ratio is maintained
       />
     </div>
   );

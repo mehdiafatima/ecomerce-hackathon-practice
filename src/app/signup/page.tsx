@@ -1,11 +1,18 @@
 import React from 'react';
+import Image from 'next/image'; // Import Image from Next.js for better optimization
 
 const Signup = () => {
   return (
     <div className="min-h-screen flex items-center justify-center">
       <div className="max-w-4xl rounded-lg p-6 md:flex">
         <div className="md:w-1/2 flex justify-center items-center p-6 lg:w-[700px] lg:h-[500px] lg:ml-0">
-          <img src="/Side Image.png" alt="Signup" className="max-w-full h-auto"/>
+          <Image
+            src="/Side Image.png" // Replace with your image path
+            alt="Signup"
+            width={700} // Adjust width for your image
+            height={500} // Adjust height for your image
+            className="max-w-full h-auto"
+          />
         </div>
         <div className="md:w-1/2 p-6">
           <h2 className="text-2xl font-semibold ">Create an account</h2>
@@ -26,7 +33,13 @@ const Signup = () => {
             <button type="submit" className="w-full bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600 transition duration-200">Create Account</button>
             <div className="flex justify-center my-4">
               <button className="flex items-center justify-center bg-white border border-gray-300 text-gray-700 py-2 px-4 rounded-md w-full hover:bg-gray-50 transition duration-200">
-                <img src="/icon-Google.png" alt="Google" className="w-5 h-5 mr-2"/>
+                <Image
+                  src="/icon-Google.png" // Replace with your Google icon image path
+                  alt="Google"
+                  width={20} // Adjust width for your Google icon
+                  height={20} // Adjust height for your Google icon
+                  className="mr-2"
+                />
                 Sign up with Google
               </button>
             </div>

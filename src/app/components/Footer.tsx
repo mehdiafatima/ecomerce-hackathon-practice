@@ -1,8 +1,9 @@
 import React from 'react';
+import Image from 'next/image'; // Import Image from Next.js
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white w-90 mt-0 ">
+    <footer className="bg-black text-white w-90 mt-0">
       <div className="max-w-screen-xl mx-auto px-4 py-10">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
           
@@ -61,10 +62,26 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Download App</h3>
             <p className="text-sm mb-4">Save $3 with App New User Only</p>
             <div className="flex space-x-4">
-              <img src="/Qr code.png" alt="QR Code" className="w-24" />
+              <Image 
+                src="/Qr code.png" 
+                alt="QR Code"
+                width={96} // Adjust width based on your desired size
+                height={96} // Adjust height based on your desired size
+              />
               <div>
-                <img src="/Googleplay.png" alt="Google Play" className="w-24 mb-2" />
-                <img src="/Appstore.png" alt="App Store" className="w-24" />
+                <Image 
+                  src="/Googleplay.png" 
+                  alt="Google Play"
+                  width={96}
+                  height={32} // Set the appropriate height
+                  className="mb-2"
+                />
+                <Image 
+                  src="/Appstore.png" 
+                  alt="App Store"
+                  width={96}
+                  height={32}
+                />
               </div>
             </div>
             <div className="flex space-x-4 mt-4">
