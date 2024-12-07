@@ -2,26 +2,73 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: white;
+  --textColor: black;
+  --softBg: #f0f0f0;
+  --softTextColor: #626262;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+
+
+.container {
+  min-height: 100vh;
+  background-color: var(--bg);
+  color: var(--textColor);
+}
+
+.wrapper {
+  max-width: 1536px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+@media screen and (max-width: 1536px) {
+  .wrapper {
+    max-width: 1366px;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .wrapper {
+    max-width: 1024px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .wrapper {
+    max-width: 768px;
+    padding-left: 30px;
+    padding-right: 40px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .wrapper {
+    max-width: 640px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .wrapper {
+    max-width: 475px;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+/* Make the Features section occupy full remaining height on large screens */
+section.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensure content is spaced properly */
+  height: 300%; /* Allow it to take up available height */
+  min-height: calc(80vh - 200px); /* Adjust according to your header/footer size */
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+/* Ensure responsive adjustments for smaller screens */
+@media (max-width: 1024px) {
+  section.container {
+    min-height: auto; /* Remove fixed height for smaller screens */
   }
 }
+
